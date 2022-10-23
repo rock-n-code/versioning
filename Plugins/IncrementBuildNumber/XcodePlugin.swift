@@ -1,24 +1,26 @@
 //
-//  Plugin.swift
+//  XcodePlugin.swift
 //  IncrementBuildNumber
 //
 //  Created by Javier Cicchelli on 23/10/2022.
 //  Copyright © 2022 Röck+Cöde. All rights reserved.
 //
 
+#if canImport(XcodeProjectPlugin)
 import PackagePlugin
+import XcodeProjectPlugin
 
-@main
-struct Plugin: CommandPlugin {
+struct XcodePlugin: XcodeCommandPlugin {
     
     // MARK: Functions
     
     func performCommand(
-        context: PackagePlugin.PluginContext,
+        context: XcodeProjectPlugin.XcodePluginContext,
         arguments: [String]
-    ) async throws {
+    ) throws {
         debugPrint(context)
         debugPrint(arguments)
     }
     
 }
+#endif
