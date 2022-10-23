@@ -42,21 +42,23 @@ let package = Package(
                 ]
             ),
             dependencies: [
-                "Versioning"
+                "VersioningCore"
             ]
         ),
         .target(
-            name: "Versioning",
+            name: "VersioningCore",
             dependencies: [
 //                .product(name: "XCConfig", package: "xcconfig"),
 //                .product(name: "SemVer", package: "semver")
-            ]
+            ],
+            path: "Sources/Versioning"
         ),
         .testTarget(
-            name: "VersioningTests",
+            name: "VersioningCoreTests",
             dependencies: [
-                "Versioning"
-            ]
+                "VersioningCore"
+            ],
+            path: "Tests/Versioning"
         ),
     ]
 )
